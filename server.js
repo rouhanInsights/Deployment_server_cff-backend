@@ -16,8 +16,15 @@ dotenv.config();
 
 const app = express();
 
+// ✅ First handle preflight for all routes
+app.options("*", cors({
+  origin: ["https://calcuttafreshfoods.shop", "https://www.calcuttafreshfoods.shop", "http://localhost:3000"],
+  credentials: true,
+}));
+
+// ✅ Then regular CORS middleware
 app.use(cors({
-  origin: ["https://calcuttafreshfoods.shop","www.calcuttafreshfoods.shop","https://www.calcuttafreshfoods.shop", "http://localhost:3000"],
+  origin: ["https://calcuttafreshfoods.shop", "https://www.calcuttafreshfoods.shop", "http://localhost:3000"],
   credentials: true,
 }));
 

@@ -17,7 +17,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: ["https://calcuttafreshfoods.shop", "http://localhost:3000"],
+  origin: ["https://calcuttafreshfoods.shop","www.calcuttafreshfoods.shop","www.https://calcuttafreshfoods.shop", "http://localhost:3000"],
   credentials: true,
 }));
 app.use(express.json());

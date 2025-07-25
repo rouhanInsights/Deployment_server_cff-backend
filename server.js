@@ -11,7 +11,7 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const slotRoutes = require("./routes/slotRoutes");
 const otpRoutes = require("./routes/otpRoutes");
 const greetingRoutes = require("./routes/greetingRoutes");
-
+const feedbackRoutes = require("./routes/feedbackRoutes");
 dotenv.config();
 
 const app = express();
@@ -33,6 +33,9 @@ app.use(express.json());
 
 // Route mounts
 app.use("/api/users", userRoutes);
+
+app.use("/api/feedback", feedbackRoutes);
+
 app.use("/api/users", otpRoutes); 
 app.use("/api/users/addresses", addressRoutes);
 app.use("/api/categories", categoryRoutes);
